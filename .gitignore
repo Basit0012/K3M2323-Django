@@ -1,8 +1,44 @@
+# Python environments
 myenv/
 venv/
 .venv/
+env/
+ENV/
+
+# Python build/cache output
 __pycache__/
 *.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Django local/runtime files
+*.log
+local_settings.py
 db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Secrets and local config
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets.json
+
+# OS/editor files
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
