@@ -44,9 +44,25 @@ def table(request):
         content+=f"{number} x {i} = {number*i}<br>"
     return HttpResponse(content)
 
+# Lists Used []
 def products(request):
     prods=["Chair", "Table", "Cupboard", "Bed"]
     content = "<h1>The products are:</h1>"
     for prod in prods:
         content+= f"<li>{prod}</li>"
     return HttpResponse(content)
+
+# Dictionary used: {}
+def prodinfo(request):
+    prod={
+        "name":"Bed",
+        "type":"single",
+        "material":"wood",
+        "price":2300
+    }
+    content=""
+    for key, value in prod.items():
+        content+=f"<p>The {key} is {value}</p>"
+    return HttpResponse(content)
+
+# tuple used ()
