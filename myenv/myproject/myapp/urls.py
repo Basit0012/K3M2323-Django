@@ -9,4 +9,5 @@ urlpatterns = [
     path('grade/',views.grade,name='grade'),
     path('table/',views.table,name='table'),
     path('products',views.products),
+    path('prodinfo/', views.prodinfo),
 ]
