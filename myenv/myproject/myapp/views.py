@@ -66,3 +66,30 @@ def prodinfo(request):
     return HttpResponse(content)
 
 # tuple used ()
+
+def prodsinfo(request):
+    prods=[
+        {"name":"Chair", "type":"double","material":"steel","price":1200},
+        {"name":"Table", "type":"single", "material":"wood", "price":3300},
+        {"name":"Cupboard", "type":"double", "material":"iron", "price":7000},
+        {"name":"Bed", "type":"single", "material":"wood", "price":6700},
+    ]
+    content="""
+    <table>
+    <tr>
+    <th>Name</th>
+    <th>Material</th>
+    <th>Price</th>
+    </tr>
+    """
+    for i in prods:
+        content += f"""
+        <tr>
+            <td>{i["name"]}</td>
+            <td>{i["material"]}</td>
+            <td>{i["price"]}</td>
+        </tr>
+        """
+    content += "</table>"
+    
+    return HttpResponse(content)
