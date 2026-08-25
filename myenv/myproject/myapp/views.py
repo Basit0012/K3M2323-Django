@@ -43,3 +43,10 @@ def table(request):
     for i in range(1,11):
         content+=f"{number} x {i} = {number*i}<br>"
     return HttpResponse(content)
+
+def products(request):
+    prods=["Chair", "Table", "Cupboard", "Bed"]
+    content = "<h1>The products are:</h1>"
+    for prod in prods:
+        content+= f"<li>{prod}</li>"
+    return HttpResponse(content)
