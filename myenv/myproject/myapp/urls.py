@@ -10,4 +10,5 @@ urlpatterns = [
     path('table/',views.table,name='table'),
     path('products',views.products),
     path('prodinfo/', views.prodinfo),
+    path('prodsinfo/',views.prodsinfo)
 ]
