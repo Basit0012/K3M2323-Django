@@ -113,3 +113,8 @@ def foodlist(request, foodvalue):
         return HttpResponse(
             f"Sorry, {foodvalue} is not available."
         )
+
+    # -------------Dynamic URLs(Query parameter)------
+def searchquery(request):
+        querysubject = request.GET.get('q')
+        return HttpResponse(f"You searched for {querysubject}")

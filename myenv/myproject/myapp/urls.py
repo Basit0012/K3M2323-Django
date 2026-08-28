@@ -12,5 +12,6 @@ urlpatterns = [
     path('prodinfo/', views.prodinfo),
     path('prodsinfo/',views.prodsinfo),
     path('greetings/<str:name>', views.greetings),
-    path('foodlist/<str:foodvalue>',views.foodlist)
+    path('foodlist/<str:foodvalue>',views.foodlist),
+    path('search/',views.searchquery),
 ]
