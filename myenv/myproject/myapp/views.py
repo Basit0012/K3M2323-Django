@@ -91,5 +91,18 @@ def prodsinfo(request):
         </tr>
         """
     content += "</table>"
-    
     return HttpResponse(content)
+
+
+# Dynamic URL
+def greetings(request, name):
+    return HttpResponse(f"Welcome,{name}")
+
+
+def foodlist(request, foodvalue):
+    fooditems = {
+        "ice cream": "Size is small, price is 100",
+        "milk shake": "Size is large,price is 80",
+        "browine": "Size is medium, price is 70",
+    }
+    return HttpResponse(f"You have selected {foodvalue}.{fooditems[foodvalue]}")
