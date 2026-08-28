@@ -105,4 +105,11 @@ def foodlist(request, foodvalue):
         "milk shake": "Size is large,price is 80",
         "browine": "Size is medium, price is 70",
     }
-    return HttpResponse(f"You have selected {foodvalue}.{fooditems[foodvalue]}")
+    if foodvalue in fooditems:
+        return HttpResponse(
+            f"You have selected {foodvalue}. {fooditems[foodvalue]}"
+        )
+    else:
+        return HttpResponse(
+            f"Sorry, {foodvalue} is not available."
+        )
