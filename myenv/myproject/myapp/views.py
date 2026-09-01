@@ -118,3 +118,7 @@ def foodlist(request, foodvalue):
 def searchquery(request):
         querysubject = request.GET.get('q')
         return HttpResponse(f"You searched for {querysubject}")
+
+#----------------------Regex--------------------------
+def customer_profile(request, customername):
+    return HttpResponse(f'Customer Profile: {customername}')

@@ -14,4 +14,6 @@ urlpatterns = [
     path('greetings/<str:name>', views.greetings),
     path('foodlist/<str:foodvalue>',views.foodlist),
     path('search/',views.searchquery),
+    # Matches URLs like /customer/Alice/ or /customer/Bob/
+    re_path(r'^customer/(?P<customername>[a-zA-Z0-9 \s]+)/$', views.customer_profile), 
 ]
