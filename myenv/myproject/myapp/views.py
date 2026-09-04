@@ -125,3 +125,6 @@ def customer_profile(request, customername):
 
 def customer_profile1(request, customername):
     return HttpResponse(f'Customer Profile: {customername}')
+
+def dobdisplay(request, date, month, year):
+    return HttpResponse(f'The date of birth is {date}/{month}/{year}')
