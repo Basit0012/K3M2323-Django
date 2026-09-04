@@ -143,7 +143,7 @@ def dobdisplay(request, date, month, year):
 # You have selected category: spicy
 # The subcategory: Not specified  
 
-def menu(request, category, subcategory=None):
+def menu(request, category, subcategory= None):
     if subcategory:
         return HttpResponse(
             f'You have selected category: {category}<br>'
