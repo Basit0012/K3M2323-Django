@@ -19,6 +19,6 @@ urlpatterns = [
     re_path(r'^customer1/(?P<customername>[\w \s]*)/?$', views.customer_profile1), 
     # + -> compulsory parameter
     # * -> Optional parameter 
-    re_path(r'^dob/(?P<date>\d{2})/(?P<month>\d{2})/(?P<year>\d{4})',views.dobdisplay), 
+    re_path(r'^dob/(?P<date>\d{1,2})/(?P<month>\d{1,2})/(?P<year>\d{2,4})',views.dobdisplay), 
     # \d -> digits with spaces \s
 ]
