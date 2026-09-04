@@ -17,8 +17,13 @@ urlpatterns = [
     # Matches URLs like /customer/Alice/ or /customer/Bob/
     re_path(r'^customer/(?P<customername>[a-zA-Z0-9 \w \s]+)/$', views.customer_profile), 
     re_path(r'^customer1/(?P<customername>[\w \s]*)/?$', views.customer_profile1), 
-    # + -> compulsory parameter
+    # + -> mandatory parameter
     # * -> Optional parameter 
     re_path(r'^dob/(?P<date>\d{1,2})/(?P<month>\d{1,2})/(?P<year>\d{2,4})',views.dobdisplay), 
     # \d -> digits with spaces \s
+    # Question URL Noodles
+   re_path(
+    r'^menu/(?P<category>[a-zA-Z0-9\s]+)(?:/(?P<subcategory>[a-zA-Z0-9\s]+))?/$',
+    views.menu
+) 
 ]

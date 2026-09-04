@@ -128,3 +128,29 @@ def customer_profile1(request, customername):
 
 def dobdisplay(request, date, month, year):
     return HttpResponse(f'The date of birth is {date}/{month}/{year}')
+
+# Question-> Create a URL /menu that accepts two parameters category and subcategory. Use regex such that the both category and subcategory accepts capital letters, digits and space. The category parameter is a mandatory parameter while the subcategory is an optional parameter
+# 
+# Case 1:
+# Example:localhost:8000/menu/spicy/noodles
+# Result:
+# You have selected category: spicy
+# The subcategory : noodles
+# 
+# Case 2:
+# Example:localhost:8000/menu/spicy/
+# result:
+# You have selected category: spicy
+# The subcategory: Not specified  
+
+def menu(request, category, subcategory=None):
+    if subcategory:
+        return HttpResponse(
+            f'You have selected category: {category}<br>'
+            f'The subcategory: {subcategory}'
+        )
+    else:
+        return HttpResponse(
+            f'You have selected category: {category}<br>'
+            f'The subcategory: Not specified'
+        )
