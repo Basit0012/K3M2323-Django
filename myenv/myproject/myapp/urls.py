@@ -15,5 +15,9 @@ urlpatterns = [
     path('foodlist/<str:foodvalue>',views.foodlist),
     path('search/',views.searchquery),
     # Matches URLs like /customer/Alice/ or /customer/Bob/
-    re_path(r'^customer/(?P<customername>[a-zA-Z0-9 \s]+)/$', views.customer_profile), 
+    re_path(r'^customer/(?P<customername>[a-zA-Z0-9 \w \s]+)/$', views.customer_profile), 
+    re_path(r'^customer1/(?P<customername>[\w \s]*)/?$', views.customer_profile1), 
+    # + -> compulsory parameter
+    # * -> Optional parameter 
+
 ]

@@ -122,3 +122,6 @@ def searchquery(request):
 #----------------------Regex--------------------------
 def customer_profile(request, customername):
     return HttpResponse(f'Customer Profile: {customername}')
+
+def customer_profile1(request, customername):
+    return HttpResponse(f'Customer Profile: {customername}')
