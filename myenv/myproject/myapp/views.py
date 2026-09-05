@@ -165,7 +165,14 @@ def menu1(request):
     newmenu = [
         {'name':'noodles','price':50},
         {'name':'pizza','price':500},
-        {'name':'garlic bread','price':'free'},
+        {'name':'garlic bread','price':'Free'},
         
     ]
     return render(request, 'menu1.html',{'mymenu':newmenu})
+
+# Create a function that display the food items in table. The data is as follows:
+# newmenu = [
+        # {'name':'noodles','price':50},
+        # {'name':'pizza','price':500},
+        # {'name':'garlic bread','price':'free'},]
+# Render the items as an HTML table such that free items are colored with backgroud color "pink"
