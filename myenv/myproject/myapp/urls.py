@@ -24,6 +24,9 @@ urlpatterns = [
     # Question URL Noodles
    re_path(
     r'^menu/(?P<category>[a-zA-Z0-9\s]+)(?:/(?P<subcategory>[a-zA-Z0-9\s]+))?/$',
-    views.menu
-) 
+    views.menu),
+    # path("divbyzero/",view.dividebyzero),
+    path("mytemp/",views.mytemp),
+    path("menu1",views.menu1),
+
 ]

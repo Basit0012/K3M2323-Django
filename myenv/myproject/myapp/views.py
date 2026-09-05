@@ -154,3 +154,18 @@ def menu(request, category, subcategory= None):
             f'You have selected category: {category}<br>'
             f'The subcategory: Not specified'
         )
+
+#------------Templates-----------
+def mytemp(request):
+    #  name = "Arun"
+    data = {'name':"Arun"}
+    return render(request, 'test.html',data)
+
+def menu1(request):
+    newmenu = [
+        {'name':'noodles','price':50},
+        {'name':'pizza','price':500},
+        {'name':'garlic bread','price':'free'},
+        
+    ]
+    return render(request, 'menu1.html',{'mymenu':newmenu})
