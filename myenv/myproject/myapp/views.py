@@ -188,3 +188,12 @@ def menu2(request, item_name):
         'newmenu': newmenu,
         'itemname': item_name
     })
+
+def image_list(request):
+    image_list = [
+        {'name':'noodles','price':'50', 'image':'images/img.jpg'},
+        {'name':'pizza','price':'500', 'image':'images/img.jpg'},
+        {'name':'garlic bread','price':'Free', 'image':'images/img.jpg'},
+    ]
+
+    return render(request, 'image_list.html', {'imagelist':image_list})
