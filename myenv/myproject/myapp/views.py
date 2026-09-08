@@ -176,3 +176,15 @@ def menu1(request):
         # {'name':'pizza','price':500},
         # {'name':'garlic bread','price':'free'},]
 # Render the items as an HTML table such that free items are colored with backgroud color "pink"
+
+def menu2(request, item_name):
+    newmenu = [
+        {'name': 'noodles', 'price': 50, 'size': 'small'},
+        {'name': 'pizza', 'price': 500, 'size': 'medium'},
+        {'name': 'garlic bread', 'price': 'Free', 'size': 'large'},
+    ]
+
+    return render(request, 'menu2.html', {
+        'newmenu': newmenu,
+        'itemname': item_name
+    })

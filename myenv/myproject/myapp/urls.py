@@ -28,5 +28,6 @@ urlpatterns = [
     # path("divbyzero/",view.dividebyzero),
     path("mytemp/",views.mytemp),
     path("menu1",views.menu1),
+    path('menu2/<str:item_name>/', views.menu2),
 
 ]
