@@ -197,3 +197,35 @@ def image_list(request):
     ]
 
     return render(request, 'image_list.html', {'imagelist':image_list})
+
+def home(request):
+    return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def food(request):
+    newmenu = [
+        {
+            'name': 'Noodles',
+            'price': '50',
+            'size': 'medium',
+            'tag': 'Chef Special',
+            'image': 'https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=900&q=80'
+        },
+        {
+            'name': 'Pizza',
+            'price': '500',
+            'size': 'large',
+            'tag': 'Best Seller',
+            'image': 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80'
+        },
+        {
+            'name': 'Garlic Bread',
+            'price': 'Free',
+            'size': 'small',
+            'tag': 'House Favorite',
+            'image': 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80'
+        },
+    ]
+    return render(request, 'food.html', {'newmenu': newmenu})

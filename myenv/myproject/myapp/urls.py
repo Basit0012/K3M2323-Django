@@ -30,4 +30,7 @@ urlpatterns = [
     path("menu1",views.menu1),
     path('menu2/<str:item_name>/', views.menu2),
     path('image_list/', views.image_list),
+    path('home/',views.home),
+    path('about/', views.about),
+    path('food/',views.food),
 ]
