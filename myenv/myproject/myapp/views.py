@@ -254,3 +254,22 @@ def itemdetails(request, name):
         'name': name,
         **item,
     })
+purchase_items = [
+    {'name': 'laptop', 'brand': 'Acer', 'price': 67000, 'color': 'Gray'},
+    {'name': 'smartphone', 'brand': 'Samsung', 'price': 23000, 'color': 'white'},
+    {'name': 'headphone', 'brand': 'Boat', 'price': 800, 'color': 'Red'},
+    {'name': 'charger', 'brand': 'Dell', 'price': 2900, 'color': 'Green'},
+]
+
+def purchaseitems(request):
+    return render(request, 'purchaseitems.html',
+                  {
+                      'purchaseitems': purchase_items})
+def purchaseitemdetail(request, itemname):
+    singleItem={}
+    for item in purchaseitems:
+        if(item['name']==itemname):
+            singleItem = item
+            break
+        data = {'item':singleItem}
+        return render(request, 'purcahseitemdetail.html', data)
