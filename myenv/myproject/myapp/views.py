@@ -229,3 +229,28 @@ def food(request):
         },
     ]
     return render(request, 'food.html', {'newmenu': newmenu})
+
+def items(request):
+    items = [
+        {'name': 'laptop'},
+        {'name': 'smartphone'},
+        {'name': 'headphone'},
+        {'name': 'charger'},
+    ]
+    return render(request, 'items.html', {'items': items})
+
+def itemdetails(request, name):
+    items={
+        'laptop':{'brand':'Acer','price':67000, 'color':'Gray'},
+        'smartphone':{'brand':'Samsung','price':23000, 'color':'white'},
+        'headphone':{'brand':'Boat','price':800, 'color':'Red'},
+        'charger':{'brand':'Dell','price':2900, 'color':'Green'},
+    }
+    item = items.get(name)
+    if item is None:
+        return HttpResponse('Item not found', status=404)
+
+    return render(request, 'itemdetails.html', {
+        'name': name,
+        **item,
+    })

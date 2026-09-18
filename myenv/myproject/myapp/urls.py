@@ -33,4 +33,6 @@ urlpatterns = [
     path('home/',views.home),
     path('about/', views.about),
     path('food/',views.food),
+    path('items/',views.items),
+    path('itemdetails/<str:name>', views.itemdetails, name='itemdetails'),
 ]
