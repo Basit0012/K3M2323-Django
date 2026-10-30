@@ -35,4 +35,5 @@ urlpatterns = [
     path('food/',views.food),
     path('items/',views.items),
     path('itemdetails/<str:name>', views.itemdetails, name='itemdetails'),
+    path('validateform1/', views.validatedjangoform, name='validatedjangoform'),
 ]

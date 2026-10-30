@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import InputForm2
 
 def newmessage(request):
     return HttpResponse("This is my first program")
@@ -273,3 +274,17 @@ def purchaseitemdetail(request, itemname):
             break
         data = {'item':singleItem}
         return render(request, 'purcahseitemdetail.html', data)
+
+def validatedjangoform(request):
+    submitted_details = None
+    if request.method == 'POST':
+        form = InputForm2(request.POST, request.FILES)
+        if form.is_valid():
+            submitted_details = form.cleaned_data
+    else:
+        form = InputForm2()
+    return render(
+        request,
+        'validateform1.html',
+        {'form': form, 'submitted_details': submitted_details},
+    )
