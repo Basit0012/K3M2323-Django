@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import InputForm2
+from .forms import InputForm2, Blogpostform
 
 def newmessage(request):
     return HttpResponse("This is my first program")
@@ -288,7 +288,6 @@ def validatedjangoform(request):
         'validateform1.html',
         {'form': form, 'submitted_details': submitted_details},
     )
-from .forms import Blogpostform
 def insertblogpost(request):
     blog_created = False
     if request.method == 'POST':
@@ -296,6 +295,12 @@ def insertblogpost(request):
         if form.is_valid():
             form.save()
             blog_created = True
+            form = Blogpostform()
     else:
         form = Blogpostform()
-    return render(request, 'insertblogpost.html',{'form':form,'blog_created':blog_created})
+    return render(request, 'insertblogpost.html', {'form': form, 'blog_created': blog_created})
+
+from .models import Blogpost
+def blogposts(request):
+    posts = Blogpost.objects.all()
+    return render(request,'blogposts.html',{'posts':posts})
