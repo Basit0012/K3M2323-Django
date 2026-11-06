@@ -304,3 +304,7 @@ from .models import Blogpost
 def blogposts(request):
     posts = Blogpost.objects.all()
     return render(request,'blogposts.html',{'posts':posts})
+
+def blogpost_detail(request, id):
+    post = Blogpost.objects.get(id=id)
+    return render(request, 'blogpost_detail.html', {'post':post})

@@ -39,4 +39,6 @@ urlpatterns = [
     path('itemdetails/<str:name>', views.itemdetails, name='itemdetails'),
     path('validateform1/', views.validatedjangoform, name='validatedjangoform'),
     path('insertblogpost/', views.insertblogpost, name='insertblogpost'),
+    path('blogposts/', views.blogposts, name='blogposts'),
+    path('blogpost_detail/<int:id>', views.blogpost_detail, name='b_d')
 ]
