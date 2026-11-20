@@ -308,3 +308,18 @@ def blogposts(request):
 def blogpost_detail(request, id):
     post = Blogpost.objects.get(id=id)
     return render(request, 'blogpost_detail.html', {'post':post})
+
+def set_cookie(request):
+    response = HttpResponse("Cookie has been set")
+    response.set_cookie('username', 'Raj', max_age=30)
+    response.set_cookie('email', 'raj@gmail.com', max_age=30)
+    return response
+def get_cookie(request):
+    value1 = request.COOKIES.get('username')
+    value2 = request.COOKIES.get('email')
+    return HttpResponse(f"The value of value1 is {value1} and value of value2 is {value2}")
+
+def delete_cookie(request):
+    response = HttpResponse("Cookie has been deleted")
+    response.delete_cookie('username')
+    return response
