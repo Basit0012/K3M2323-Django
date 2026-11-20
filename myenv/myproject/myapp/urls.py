@@ -46,4 +46,9 @@ urlpatterns = [
     path('getcookie/', views.get_cookie),
     path('deletecookie/', views.delete_cookie),
 
+
+    path('login/', views.login, name='login'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('logout/', views.logout,name='logout'),
+
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import InputForm2, Blogpostform
 
@@ -323,3 +323,26 @@ def delete_cookie(request):
     response = HttpResponse("Cookie has been deleted")
     response.delete_cookie('username')
     return response
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        if username and password:
+            request.session['username'] = username
+            return redirect('dashboard')
+    return render(request, 'login.html')
+
+def dashboard(request):
+    username = request.session.get('username')
+    if not username:
+        return redirect('login')
+    return render(request, 'dashboard.html', {'username': username})
+
+def logout(request):
+    request.session.flush()
+    return redirect('login')
+
+def logout(request):
+    request.session.flush()
+    return redirect('login')
